@@ -1,4 +1,4 @@
-import { createClient } from '@/utils/supabase/server';
+import { createClient } from '@/lib/supabase/server';
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     email,
     password,
     options: {
-      emailRedirectTo: `${requestUrl.origin}/auth/callback`,
+      emailRedirectTo: `${requestUrl.origin}/api/callback`,
     },
   });
 

@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Next.js and Supabase Starter Kit',
-  description: 'The fastest way to build apps with Next.js and Supabase',
+  title: 'Abbeyard',
+  description: 'The fastest and easiest way to manage your ledger',
 };
 
 export default function RootLayout({
@@ -12,8 +12,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className='flex-center h-screen w-screen'>
-        <main className=''>{children}</main>
+      <body className='light' suppressHydrationWarning={true}>
+        {children}
       </body>
     </html>
   );

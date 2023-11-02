@@ -1,3 +1,5 @@
 {
-    "nuxt.isNuxtApp": false
+  "nuxt.isNuxtApp": false,
+  "WillLuke.nextjs.hasPrompted": true,
+  "cSpell.words": ["abbeyard", "nextui", "Nunito", "shadcn"]
 }

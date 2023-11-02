@@ -13,13 +13,13 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 
-const LoginForm = () => {
+export default function Login() {
   return (
-    <div className='absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 p-6 sm:w-[30rem]'>
-      <form action='/api/sign-in' method='post'>
+    <div className='w-full p-6 sm:w-[30rem]'>
+      <form action='/api/sign-up' method='post'>
         <Card>
           <CardHeader className='space-y-3'>
-            <CardTitle className='text-center text-3xl'>Sign in</CardTitle>
+            <CardTitle className='text-center text-3xl'>Sign Up</CardTitle>
             <CardDescription className='text-center'>
               Enter your email and password to login
             </CardDescription>
@@ -27,14 +27,14 @@ const LoginForm = () => {
           <CardContent className='grid gap-4'>
             <div className='grid gap-2'>
               <Label htmlFor='email'>Email</Label>
-              <Input name='email' id='email' type='email' required />
+              <Input name='email' type='email' required />
             </div>
             <div className='grid gap-2'>
               <Label htmlFor='password'>Password</Label>
-              <Input name='password' id='password' type='password' required />
+              <Input name='password' type='password' required />
             </div>
             <div className='flex items-center space-x-2'>
-              <Checkbox id='terms' name='terms' />
+              <Checkbox id='terms' />
               <label
                 htmlFor='terms'
                 className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
@@ -44,12 +44,10 @@ const LoginForm = () => {
             </div>
           </CardContent>
           <CardFooter className='flex flex-col'>
-            <Button className='w-full'>Login</Button>
+            <Button className='w-full'>Sign up</Button>
           </CardFooter>
         </Card>
       </form>
     </div>
   );
-};
-
-export default LoginForm;
+}
