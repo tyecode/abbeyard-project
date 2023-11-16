@@ -1,6 +1,5 @@
-import { HomeIcon } from '@radix-ui/react-icons';
-import { Button } from './ui/button';
-import CorrectIcons from './CorrectIcons';
+import { Button } from './ui/button'
+import CorrectIcons from './CorrectIcons'
 
 const LeftBar = ({ navLinks }: any) => {
   return (
@@ -13,7 +12,8 @@ const LeftBar = ({ navLinks }: any) => {
           <li key={link.id}>
             <Button
               variant={'ghost'}
-              className='group flex w-full items-center justify-start gap-4 text-lg text-foreground'
+              size={'sm'}
+              className='group flex w-full items-center justify-start gap-4 text-foreground'
             >
               <CorrectIcons icon={link.icon} />
               {link.title}
@@ -22,7 +22,7 @@ const LeftBar = ({ navLinks }: any) => {
         ))}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default LeftBar;
+export default LeftBar

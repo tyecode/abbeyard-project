@@ -1,4 +1,4 @@
-const { nextui } = require('@nextui-org/react');
+const { nextui } = require('@nextui-org/react')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -22,6 +22,7 @@ module.exports = {
     },
     fontFamily: {
       nunito: ['Nunito', 'sans-serif'],
+      'noto-lao': ['Noto Sans Lao', 'sans-serif'],
     },
     extend: {
       backgroundImage: {
@@ -84,4 +85,4 @@ module.exports = {
     },
   },
   plugins: [require('tailwindcss-animate'), nextui()],
-};
+}

@@ -23,4 +23,4 @@ export const navLinks = [
     href: '#',
     icon: 'HomeIcon',
   },
-];
+]
