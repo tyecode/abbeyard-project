@@ -1,5 +1,11 @@
-import LeftBar from '@/components/LeftBar'
-import TopBar from '@/components/TopBar'
+'use client'
+
+import { getAuth } from '@/app/actions/authAction'
+import LeftBar from '@/components/left-bar'
+import TopBar from '@/components/top-bar'
+import { createClient } from '@/lib/supabase/client'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 const dashboard = [
   {
@@ -9,9 +15,21 @@ const dashboard = [
   },
 ]
 
-const getSession = async () => {}
-
 const DashboardPageLayout = ({ children }: { children: React.ReactNode }) => {
+  const router = useRouter()
+  const supabase = createClient()
+
+  // useEffect(() => {
+  //   supabase.auth
+  //     .getUser()
+  //     .then((res: any) => res.data.user)
+  //     .then(async (user) => {
+  //       const data = await getAuth(user)
+
+  //       if (data?.role !== 'ADMIN') router.replace('/')
+  //     })
+  // }, [router, supabase])
+
   return (
     <>
       <aside className='h-full w-[18rem] border bg-background'>

@@ -1,5 +1,5 @@
-import { Button } from './ui/button'
-import CorrectIcons from './CorrectIcons'
+import { Button } from '@/components/ui/button'
+import { IconsCollection } from '@/components/icons/radix-icons-collection'
 
 const LeftBar = ({ navLinks }: any) => {
   return (
@@ -15,7 +15,7 @@ const LeftBar = ({ navLinks }: any) => {
               size={'sm'}
               className='group flex w-full items-center justify-start gap-4 text-foreground'
             >
-              <CorrectIcons icon={link.icon} />
+              <IconsCollection icon={link.icon} />
               {link.title}
             </Button>
           </li>

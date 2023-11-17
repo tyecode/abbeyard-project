@@ -5,8 +5,8 @@ import { usePathname, useRouter } from 'next/navigation'
 
 import { Spinner } from '@nextui-org/react'
 import { navLinks } from '@/constants'
-import LeftBar from '@/components/LeftBar'
-import TopBar from '@/components/TopBar'
+import LeftBar from '@/components/left-bar'
+import TopBar from '@/components/top-bar'
 import { createClient } from '@/lib/supabase/client'
 
 const HomePageLayout = ({ children }: { children: React.ReactNode }) => {

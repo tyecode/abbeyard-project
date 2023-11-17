@@ -19,10 +19,10 @@ const LoginForm = () => {
   const message = searchParams.get('message')
 
   return (
-    <div className='absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 p-6 sm:w-[30rem]'>
+    <div className='absolute left-1/2 top-1/2 w-[25rem] -translate-x-1/2 -translate-y-1/2 p-6'>
       <form action='/api/sign-in' method='post'>
         <Card>
-          <CardHeader className='space-y-3'>
+          <CardHeader className='mb-4 space-y-3'>
             <CardTitle className='text-center text-3xl'>Sign in</CardTitle>
             <CardDescription className='text-center'>
               Enter your email and password to login
@@ -42,13 +42,14 @@ const LoginForm = () => {
             <Button
               className='w-full'
               type='submit'
+              size={'sm'}
               onSubmit={(e) => e.preventDefault()}
             >
               Login
             </Button>
           </CardFooter>
           {error && (
-            <p className='py- font-noto-lao mb-5 w-full text-center text-sm text-danger'>
+            <p className='py- mb-5 w-full text-center font-noto-lao text-sm text-danger'>
               {'ອີເມວ ຫລື ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ'}
             </p>
           )}

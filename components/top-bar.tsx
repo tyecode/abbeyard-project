@@ -2,7 +2,8 @@
 
 import { usePathname } from 'next/navigation'
 
-import CorrectIcons from '@/components/CorrectIcons'
+import { IconsCollection } from '@/components/icons/radix-icons-collection'
+import { ModeToggle } from '@/components/mode-toggle'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import {
@@ -10,7 +11,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import { ModeToggle } from './ModeToggle'
 
 const TopBar = () => {
   const pathname = usePathname()
@@ -35,7 +35,7 @@ const TopBar = () => {
 
           <Popover>
             <PopoverTrigger>
-              <Avatar className='h-12 w-12 cursor-pointer'>
+              <Avatar className='aspect-square w-10 cursor-pointer'>
                 <AvatarImage
                   src='https://github.com/shadcn.png'
                   alt='@shadcn'
@@ -70,7 +70,7 @@ const TopBar = () => {
                     variant={'ghost'}
                     className='w-full justify-start gap-4 text-base'
                   >
-                    <CorrectIcons icon={'DashboardIcon'} />
+                    <IconsCollection icon={'DashboardIcon'} />
                     Dashboard
                   </Button>
                 </li>
@@ -80,7 +80,7 @@ const TopBar = () => {
                       variant={'ghost'}
                       className='w-full justify-start gap-4 text-base'
                     >
-                      <CorrectIcons icon={'ExitIcon'} />
+                      <IconsCollection icon={'ExitIcon'} />
                       Logout
                     </Button>
                   </form>

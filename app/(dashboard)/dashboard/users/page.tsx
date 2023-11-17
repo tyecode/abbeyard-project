@@ -10,8 +10,8 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { UsersDropdown } from '@/components/UsersDropdown'
-import AddUserModal from '@/components/modals/AddUserModal'
+import { UserDropdown } from '@/components/user-dropdown'
+import AddUserModal from '@/components/modals/add-user-modal'
 import { getUsers } from '@/app/actions/usersAction'
 
 const UsersPage = async () => {
@@ -40,7 +40,7 @@ const UsersPage = async () => {
               <TableCell>{user.role.toLowerCase()}</TableCell>
               <TableCell>{user.created_at.toString()}</TableCell>
               <TableCell>
-                <UsersDropdown user={user} />
+                <UserDropdown user={user} />
               </TableCell>
             </TableRow>
           ))}

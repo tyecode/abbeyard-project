@@ -1,5 +1,8 @@
 'use client'
 
+import { useTransition } from 'react'
+import { DotsVerticalIcon } from '@radix-ui/react-icons'
+import { Users } from '@prisma/client'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,17 +10,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { useToast } from '@/components/ui/use-toast'
 import { deleteUsers } from '@/app/actions/usersAction'
-import { DotsVerticalIcon } from '@radix-ui/react-icons'
-import { Users } from '.prisma/client'
-import { useToast } from './ui/use-toast'
-import { useTransition } from 'react'
 
 type Props = {
   user: Users
 }
 
-export const UsersDropdown = (props: Props) => {
+export const UserDropdown = (props: Props) => {
   const { toast } = useToast()
   const [isPending, setTransition] = useTransition()
 
