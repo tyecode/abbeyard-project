@@ -1,4 +1,4 @@
-'use server'
+'use client'
 
 import { Users } from '@prisma/client'
 import {
@@ -13,9 +13,19 @@ import {
 import { UserDropdown } from '@/components/user-dropdown'
 import AddUserModal from '@/components/modals/add-user-modal'
 import { getUsers } from '@/app/actions/usersAction'
+import { useEffect, useState } from 'react'
 
-const UsersPage = async () => {
-  const users: Users[] = await getUsers()
+const UsersPage = () => {
+  const [users, setUsers] = useState<Users[]>([])
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const users: Users[] = await getUsers()
+      setUsers(users)
+    }
+
+    fetchUsers()
+  }, [])
 
   return (
     <div className='container'>
