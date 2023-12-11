@@ -1,6 +1,6 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 import { IconsCollection } from '@/components/icons/radix-icons-collection'
 import { ModeToggle } from '@/components/mode-toggle'
@@ -13,20 +13,21 @@ import {
 } from '@/components/ui/popover'
 
 const TopBar = () => {
+  const router = useRouter()
   const pathname = usePathname()
   const title = pathname.split('/')[1]
 
   return (
-    <section className='w-full border bg-background py-4'>
-      <div className='container flex items-center justify-between md:container'>
+    <section className='w-full border bg-background'>
+      <div className='container flex h-20 items-center justify-between md:container'>
         {pathname !== '/' ? (
-          <span className='text-3xl font-bold capitalize text-foreground/80'>
+          <span className='text-2xl font-bold capitalize text-foreground/80'>
             {title}
           </span>
         ) : (
-          <div className='flex flex-col text-sm font-normal capitalize'>
+          <div className='flex flex-col text-xs font-normal capitalize'>
             Welcome back,{' '}
-            <span className='text-xl font-medium'>Sengphachanh</span>
+            <span className='text-xl font-semibold'>Sengphachanh</span>
           </div>
         )}
 
@@ -69,13 +70,14 @@ const TopBar = () => {
                   <Button
                     variant={'ghost'}
                     className='w-full justify-start gap-4 text-base'
+                    onClick={() => router.push('/dashboard')}
                   >
                     <IconsCollection icon={'DashboardIcon'} />
                     Dashboard
                   </Button>
                 </li>
                 <li>
-                  <form action='/api/sign-out' method='post'>
+                  <form action='/api/logout' method='post'>
                     <Button
                       variant={'ghost'}
                       className='w-full justify-start gap-4 text-base'

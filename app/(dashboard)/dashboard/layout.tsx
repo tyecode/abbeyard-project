@@ -2,6 +2,7 @@
 
 import LeftBar from '@/components/left-bar'
 import TopBar from '@/components/top-bar'
+import { Toaster } from '@/components/ui/toaster'
 
 const dashboard = [
   {
@@ -21,6 +22,7 @@ const DashboardPageLayout = ({ children }: { children: React.ReactNode }) => {
       <main className='flex h-full w-full flex-col'>
         <TopBar />
         {children}
+        <Toaster />
       </main>
     </>
   )

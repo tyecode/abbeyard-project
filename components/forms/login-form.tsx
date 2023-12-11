@@ -20,7 +20,7 @@ const LoginForm = () => {
 
   return (
     <div className='absolute left-1/2 top-1/2 w-[25rem] -translate-x-1/2 -translate-y-1/2 p-6'>
-      <form action='/api/sign-in' method='post'>
+      <form action='/api/login' method='post'>
         <Card>
           <CardHeader className='mb-4 space-y-3'>
             <CardTitle className='text-center text-3xl'>Sign in</CardTitle>

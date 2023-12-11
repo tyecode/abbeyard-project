@@ -14,21 +14,6 @@ const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
   const supabase = createClient()
   const [isLoading, setLoadingState] = useState(true)
 
-  useEffect(() => {
-    supabase.auth
-      .getSession()
-      .then((res) => {
-        if (!res.data.session) {
-          router.replace('/login')
-        }
-      })
-      .finally(() => {
-        setTimeout(() => {
-          setLoadingState(false)
-        }, 1000)
-      })
-  }, [router, supabase.auth])
-
   return (
     <>
       {/* {isLoading && (
